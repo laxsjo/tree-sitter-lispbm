@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "lispbm",
+      "camelcase": "lispBM",
+      "scope": "source.lispbm",
+      "file-types": [
+        ".lispbm"
+      ],
+      "injection-regex": "^lispbm$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "lispBM",
+    "authors": [
+      {
+        "name": "Joakim Lundborg",
+        "email": "joakim.lundborg@gmail.com",
+        "url": "https://github.com/cortex"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/tree-sitter/tree-sitter-lispbm"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
