@@ -8,10 +8,6 @@
         "name": "expression"
       }
     },
-    "whitespace": {
-      "type": "PATTERN",
-      "value": "[\\s\\t\\n]"
-    },
     "expression": {
       "type": "CHOICE",
       "members": [
@@ -37,7 +33,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "ref"
+          "name": "quote"
         }
       ]
     },
@@ -83,9 +79,9 @@
     },
     "symbol": {
       "type": "PATTERN",
-      "value": "[a-zA-Z_+*\\/\\-=<>!&?]+"
+      "value": "[a-zA-Z+-/=<>#!][a-zA-Z0-9+-/=<>!?_]{0,255}"
     },
-    "ref": {
+    "quote": {
       "type": "SEQ",
       "members": [
         {

@@ -20,7 +20,7 @@
           "named": true
         },
         {
-          "type": "ref",
+          "type": "quote",
           "named": true
         },
         {
@@ -80,7 +80,7 @@
     }
   },
   {
-    "type": "ref",
+    "type": "quote",
     "named": true,
     "fields": {},
     "children": {

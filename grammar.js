@@ -13,13 +13,15 @@ module.exports = grammar({
   rules: {
     // TODO: add the actual grammar rules
     program: ($) => repeat($.expression),
-    whitespace: ($) => /[\s\t\n]/,
     expression: ($) =>
-      choice($.list, $.symbol, $.progn, $.number, $.string, $.ref),
+      choice($.list, $.symbol, $.progn, $.number, $.string, $.quote),
     list: ($) => seq("(", repeat($.expression), ")"),
     progn: ($) => seq("{", repeat($.expression), "}"),
-    symbol: ($) => /[a-zA-Z_+*\/\-=<>!&?]+/,
-    ref: ($) => seq("'", $.symbol),
+    // 1. The first character is a one of 'a' - 'z' or 'A' - 'Z' or '+-/=<>#!'.
+    // 2. The rest of the characters are in 'a' - 'z' or 'A' - 'Z' or '0' - '9' or '+-/=<>!?_'.
+    // 3. At most 256 characters long.
+    symbol: ($) => /[a-zA-Z+-/=<>#!][a-zA-Z0-9+-/=<>!?_]{0,255}/,
+    quote: ($) => seq("'", $.symbol),
     number: ($) => /\d+/,
     string: ($) => seq('"', repeat(choice(/[^"]/, '""')), '"'),
   },
