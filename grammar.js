@@ -12,9 +12,10 @@ module.exports = grammar({
 
   rules: {
     // TODO: add the actual grammar rules
-    source_file: ($) => repeat($._expression),
-    _expression: ($) => choice($.list, $.symbol),
-    list: ($) => seq("(", repeat($._expression), ")"),
-    symbol: ($) => /[a-zA-Z_+*\/\-=<>!&?]+/,
+    program: ($) => repeat($.expression),
+    expression: ($) => choice($.list, $.symbol, $.progn),
+    list: ($) => seq("(", repeat($.expression), ")"),
+    progn: ($) => seq("{", repeat($.expression), "}"),
+    symbol: ($) => seq("'", /[a-zA-Z_+*\/\-=<>!&?]+/, "'"),
   },
 });
