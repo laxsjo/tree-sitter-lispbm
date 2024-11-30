@@ -1,15 +1,18 @@
 {
-  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "lispbm",
   "rules": {
-    "source_file": {
+    "program": {
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "_expression"
+        "name": "expression"
       }
     },
-    "_expression": {
+    "whitespace": {
+      "type": "PATTERN",
+      "value": "[\\s\\t\\n]"
+    },
+    "expression": {
       "type": "CHOICE",
       "members": [
         {
@@ -19,6 +22,22 @@
         {
           "type": "SYMBOL",
           "name": "symbol"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "progn"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ref"
         }
       ]
     },
@@ -33,7 +52,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "expression"
           }
         },
         {
@@ -42,9 +61,75 @@
         }
       ]
     },
+    "progn": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
     "symbol": {
       "type": "PATTERN",
       "value": "[a-zA-Z_+*\\/\\-=<>!&?]+"
+    },
+    "ref": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        }
+      ]
+    },
+    "number": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^\"]"
+              },
+              {
+                "type": "STRING",
+                "value": "\"\""
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
     }
   },
   "extras": [
@@ -59,3 +144,4 @@
   "inline": [],
   "supertypes": []
 }
+

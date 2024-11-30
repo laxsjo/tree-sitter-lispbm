@@ -1,14 +1,30 @@
 [
   {
-    "type": "list",
+    "type": "expression",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "progn",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         },
         {
@@ -19,24 +35,81 @@
     }
   },
   {
-    "type": "source_file",
+    "type": "list",
     "named": true,
-    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": false,
       "types": [
         {
-          "type": "list",
+          "type": "expression",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "progn",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "program",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ref",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
         {
           "type": "symbol",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "\"\"",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
   },
   {
     "type": "(",
@@ -47,7 +120,19 @@
     "named": false
   },
   {
+    "type": "number",
+    "named": true
+  },
+  {
     "type": "symbol",
     "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
   }
 ]
