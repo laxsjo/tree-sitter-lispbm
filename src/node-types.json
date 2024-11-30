@@ -1,5 +1,24 @@
 [
   {
+    "type": "application",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "atom",
     "named": true,
     "fields": {},
@@ -13,10 +32,6 @@
         },
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "progn",
           "named": true
         },
         {
@@ -58,26 +73,15 @@
       "required": true,
       "types": [
         {
+          "type": "application",
+          "named": true
+        },
+        {
           "type": "atom",
           "named": true
         },
         {
-          "type": "list",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "expression",
+          "type": "progn",
           "named": true
         }
       ]
