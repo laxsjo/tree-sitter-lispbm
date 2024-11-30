@@ -13,8 +13,9 @@ module.exports = grammar({
   rules: {
     // TODO: add the actual grammar rules
     program: ($) => repeat($.expression),
-    expression: ($) =>
-      choice($.list, $.symbol, $.progn, $.number, $.string, $.quote),
+    expression: ($) => choice($.list, $.atom),
+    atom: ($) =>
+      choice($.symbol, $.number, $.string, $.quote, $.byteArray, $.progn),
     list: ($) => seq("(", repeat($.expression), ")"),
     progn: ($) => seq("{", repeat($.expression), "}"),
     // 1. The first character is a one of 'a' - 'z' or 'A' - 'Z' or '+-/=<>#!'.
@@ -24,5 +25,6 @@ module.exports = grammar({
     quote: ($) => seq("'", $.symbol),
     number: ($) => /\d+/,
     string: ($) => seq('"', repeat(choice(/[^"]/, '""')), '"'),
+    byteArray: ($) => seq("[", repeat($.number), "]"),
   },
 });
