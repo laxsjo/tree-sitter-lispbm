@@ -11,10 +11,10 @@ module.exports = grammar({
   name: "lispbm",
 
   rules: {
-    // TODO: add the actual grammar rules
     program: ($) => repeat($.expression),
     expression: ($) => choice($.application, $.atom, $.progn),
-    application: ($) => seq("(", $.symbol, repeat($.expression), ")"),
+    application: ($) =>
+      seq("(", field("name", $.symbol), repeat($.expression), ")"),
     atom: ($) => choice($.symbol, $.number, $.string, $.quote, $.byteArray),
     progn: ($) => seq("{", repeat($.expression), "}"),
     // 1. The first character is a one of 'a' - 'z' or 'A' - 'Z' or '+-/=<>#!'.

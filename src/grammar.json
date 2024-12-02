@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "lispbm",
   "rules": {
     "program": {
@@ -33,8 +34,12 @@
           "value": "("
         },
         {
-          "type": "SYMBOL",
-          "name": "symbol"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "symbol"
+          }
         },
         {
           "type": "REPEAT",
@@ -177,4 +182,3 @@
   "inline": [],
   "supertypes": []
 }
-
