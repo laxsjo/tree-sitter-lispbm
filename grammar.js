@@ -11,12 +11,12 @@ module.exports = grammar({
   name: "lispbm",
 
   rules: {
-    program: ($) => repeat($.expression),
-    expression: ($) => choice($.application, $.atom, $.progn),
+    program: ($) => repeat(choice($._expression, $.comment)),
+    _expression: ($) => choice($.application, $._atom, $.progn),
+    _atom: ($) => choice($.symbol, $.number, $.string, $.quote, $.byteArray),
     application: ($) =>
-      seq("(", field("name", $.symbol), repeat($.expression), ")"),
-    atom: ($) => choice($.symbol, $.number, $.string, $.quote, $.byteArray),
-    progn: ($) => seq("{", repeat($.expression), "}"),
+      seq("(", field("name", $.symbol), repeat($._expression), ")"),
+    progn: ($) => seq("{", repeat($._expression), "}"),
     // 1. The first character is a one of 'a' - 'z' or 'A' - 'Z' or '+-/=<>#!'.
     // 2. The rest of the characters are in 'a' - 'z' or 'A' - 'Z' or '0' - '9' or '+-/=<>!?_'.
     // 3. At most 256 characters long.
@@ -25,5 +25,6 @@ module.exports = grammar({
     number: ($) => /\d+/,
     string: ($) => seq('"', repeat(choice(/[^"]/, '""')), '"'),
     byteArray: ($) => seq("[", repeat($.number), "]"),
+    comment: ($) => seq(";", /.*/),
   },
 });

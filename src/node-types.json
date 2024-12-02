@@ -19,26 +19,19 @@
       "required": false,
       "types": [
         {
-          "type": "expression",
+          "type": "application",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "atom",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
+        },
         {
           "type": "byteArray",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "progn",
           "named": true
         },
         {
@@ -72,27 +65,9 @@
     }
   },
   {
-    "type": "expression",
+    "type": "comment",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "atom",
-          "named": true
-        },
-        {
-          "type": "progn",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "progn",
@@ -103,7 +78,31 @@
       "required": false,
       "types": [
         {
-          "type": "expression",
+          "type": "application",
+          "named": true
+        },
+        {
+          "type": "byteArray",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "progn",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         }
       ]
@@ -119,7 +118,35 @@
       "required": false,
       "types": [
         {
-          "type": "expression",
+          "type": "application",
+          "named": true
+        },
+        {
+          "type": "byteArray",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "progn",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         }
       ]
@@ -163,6 +190,10 @@
   },
   {
     "type": ")",
+    "named": false
+  },
+  {
+    "type": ";",
     "named": false
   },
   {
