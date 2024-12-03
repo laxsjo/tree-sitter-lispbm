@@ -23,6 +23,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "specialForm"
+        },
+        {
+          "type": "SYMBOL",
           "name": "application"
         },
         {
@@ -57,6 +61,34 @@
         {
           "type": "SYMBOL",
           "name": "byteArray"
+        }
+      ]
+    },
+    "specialForm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "special",
+          "content": {
+            "type": "SYMBOL",
+            "name": "special"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },
@@ -163,6 +195,63 @@
         {
           "type": "STRING",
           "value": "f632"
+        }
+      ]
+    },
+    "special": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "quote"
+        },
+        {
+          "type": "STRING",
+          "value": "define"
+        },
+        {
+          "type": "STRING",
+          "value": "lambda"
+        },
+        {
+          "type": "STRING",
+          "value": "if"
+        },
+        {
+          "type": "STRING",
+          "value": "progn"
+        },
+        {
+          "type": "STRING",
+          "value": "and"
+        },
+        {
+          "type": "STRING",
+          "value": "or"
+        },
+        {
+          "type": "STRING",
+          "value": "let"
+        },
+        {
+          "type": "STRING",
+          "value": "setq"
+        },
+        {
+          "type": "STRING",
+          "value": "def"
+        },
+        {
+          "type": "STRING",
+          "value": "defun"
+        },
+        {
+          "type": "STRING",
+          "value": "defunret"
+        },
+        {
+          "type": "STRING",
+          "value": "var"
         }
       ]
     },

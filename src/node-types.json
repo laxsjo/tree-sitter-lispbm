@@ -39,6 +39,10 @@
           "named": true
         },
         {
+          "type": "specialForm",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -103,6 +107,10 @@
           "named": true
         },
         {
+          "type": "specialForm",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -147,6 +155,10 @@
           "named": true
         },
         {
+          "type": "specialForm",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -183,6 +195,69 @@
         },
         {
           "type": "quote",
+          "named": true
+        },
+        {
+          "type": "specialForm",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "special",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "specialForm",
+    "named": true,
+    "fields": {
+      "special": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "special",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "application",
+          "named": true
+        },
+        {
+          "type": "byteArray",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "progn",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "specialForm",
           "named": true
         },
         {
@@ -234,7 +309,27 @@
     "named": false
   },
   {
+    "type": "and",
+    "named": false
+  },
+  {
     "type": "b",
+    "named": false
+  },
+  {
+    "type": "def",
+    "named": false
+  },
+  {
+    "type": "define",
+    "named": false
+  },
+  {
+    "type": "defun",
+    "named": false
+  },
+  {
+    "type": "defunret",
     "named": false
   },
   {
@@ -258,6 +353,34 @@
     "named": false
   },
   {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "lambda",
+    "named": false
+  },
+  {
+    "type": "let",
+    "named": false
+  },
+  {
+    "type": "or",
+    "named": false
+  },
+  {
+    "type": "progn",
+    "named": false
+  },
+  {
+    "type": "quote",
+    "named": false
+  },
+  {
+    "type": "setq",
+    "named": false
+  },
+  {
     "type": "symbol",
     "named": true
   },
@@ -271,6 +394,10 @@
   },
   {
     "type": "u64",
+    "named": false
+  },
+  {
+    "type": "var",
     "named": false
   },
   {
