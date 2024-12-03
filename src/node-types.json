@@ -70,6 +70,11 @@
     "fields": {}
   },
   {
+    "type": "number",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "progn",
     "named": true,
     "fields": {},
@@ -161,6 +166,30 @@
       "required": true,
       "types": [
         {
+          "type": "application",
+          "named": true
+        },
+        {
+          "type": "byteArray",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "progn",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "symbol",
           "named": true
         }
@@ -174,10 +203,6 @@
   },
   {
     "type": "\"",
-    "named": false
-  },
-  {
-    "type": "\"\"",
     "named": false
   },
   {
@@ -201,16 +226,52 @@
     "named": false
   },
   {
+    "type": "\\\"",
+    "named": false
+  },
+  {
     "type": "]",
     "named": false
   },
   {
-    "type": "number",
-    "named": true
+    "type": "b",
+    "named": false
+  },
+  {
+    "type": "f32",
+    "named": false
+  },
+  {
+    "type": "f632",
+    "named": false
+  },
+  {
+    "type": "i",
+    "named": false
+  },
+  {
+    "type": "i32",
+    "named": false
+  },
+  {
+    "type": "i64",
+    "named": false
   },
   {
     "type": "symbol",
     "named": true
+  },
+  {
+    "type": "u",
+    "named": false
+  },
+  {
+    "type": "u32",
+    "named": false
+  },
+  {
+    "type": "u64",
+    "named": false
   },
   {
     "type": "{",

@@ -20,10 +20,13 @@ module.exports = grammar({
     // 1. The first character is a one of 'a' - 'z' or 'A' - 'Z' or '+-/=<>#!'.
     // 2. The rest of the characters are in 'a' - 'z' or 'A' - 'Z' or '0' - '9' or '+-/=<>!?_'.
     // 3. At most 256 characters long.
-    symbol: ($) => /[a-zA-Z+-/=<>#!][a-zA-Z0-9+-/=<>!?_]{0,255}/,
-    quote: ($) => seq("'", $.symbol),
-    number: ($) => /\d+/,
-    string: ($) => seq('"', repeat(choice(/[^"]/, '""')), '"'),
+    symbol: ($) => /-?[a-zA-Z+/=<>#!][a-zA-Z0-9+\-/=<>!?_]{0,255}/,
+    quote: ($) => seq("'", $._expression),
+    _numQualifier: ($) =>
+      choice("b", "i", "u", "i32", "u32", "i64", "u64", "f32", "f632"),
+    number: ($) => seq(/\-?\d+(\.\d+)?/, optional($._numQualifier)),
+    string: ($) => seq('"', repeat(choice(/[^"]/, '\\"')), '"'),
+
     byteArray: ($) => seq("[", repeat($.number), "]"),
     comment: ($) => seq(";", /.*/),
   },

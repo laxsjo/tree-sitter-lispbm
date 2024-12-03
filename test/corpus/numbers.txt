@@ -1,0 +1,16 @@
+=========
+Numeric types
+=========
+1
+-1
+1.0
+-1.0
+1.0f32
+---------
+
+(program
+  (number)
+  (number)
+  (number)
+  (number)
+  (number))
