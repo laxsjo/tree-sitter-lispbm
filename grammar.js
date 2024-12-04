@@ -12,10 +12,32 @@ module.exports = grammar({
 
   rules: {
     program: ($) => repeat(choice($._expression, $.comment)),
-    _expression: ($) => choice($.specialForm, $.application, $._atom, $.progn),
-    _atom: ($) => choice($.symbol, $.number, $.string, $.quote, $.byteArray),
-    specialForm: ($) =>
-      seq("(", field("special", $.special), repeat($._expression), ")"),
+    _expression: ($) =>
+      choice(
+        $.function_definition,
+        $.definition,
+        $.special_form,
+        $.application,
+        $._atom,
+        $.progn,
+      ),
+    _atom: ($) =>
+      choice(
+        $.symbol,
+        $.number,
+        $.string,
+        $.quote,
+        $.unquote,
+        $.unquote_splice,
+        $.byte_array,
+      ),
+    special_form: ($) =>
+      seq(
+        "(",
+        choice(field("special", $.special), $.function_definition),
+        repeat($._expression),
+        ")",
+      ),
     application: ($) =>
       seq("(", field("name", $.symbol), repeat($._expression), ")"),
 
@@ -25,12 +47,33 @@ module.exports = grammar({
     // 3. At most 256 characters long.
     symbol: ($) => /-?[a-zA-Z+/=<>#!][a-zA-Z0-9+\-/=<>!?_]{0,255}/,
     quote: ($) => seq("'", $._expression),
-    _numQualifier: ($) =>
+    unquote_splice: ($) => seq(",@", $._expression),
+    unquote: ($) => seq(",", $._expression),
+    arglist: ($) => seq("(", repeat($.symbol), ")"),
+    _num_qualifier: ($) =>
       choice("b", "i", "u", "i32", "u32", "i64", "u64", "f32", "f632"),
+
+    function_definition: ($) =>
+      seq(
+        "(",
+        field("keyword", choice("defun", "defunret")),
+        field("name", $.symbol),
+        field("args", $.arglist),
+        field("body", $._expression),
+        ")",
+      ),
+
+    definition: ($) =>
+      seq(
+        "(",
+        choice("def", "define"),
+        field("name", $.symbol),
+        field("value", $._expression),
+        ")",
+      ),
     special: ($) =>
       choice(
         "quote",
-        "define",
         "lambda",
         "if",
         "progn",
@@ -38,15 +81,13 @@ module.exports = grammar({
         "or",
         "let",
         "setq",
-        "def",
-        "defun",
-        "defunret",
         "var",
+        "import",
       ),
-    number: ($) => seq(/\-?\d+(\.\d+)?/, optional($._numQualifier)),
+    number: ($) => seq(/\-?\d+(\.\d+)?/, optional($._num_qualifier)),
     string: ($) => seq('"', repeat(choice(/[^"]/, '\\"')), '"'),
 
-    byteArray: ($) => seq("[", repeat($.number), "]"),
+    byte_array: ($) => seq("[", repeat($.number), "]"),
     comment: ($) => seq(";", /.*/),
   },
 });

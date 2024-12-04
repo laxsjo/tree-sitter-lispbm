@@ -1,0 +1,14 @@
+=========
+Functions
+=========
+(defun greet (msg) (print "hello" msg))
+(def test 1)
+(define a 1)
+------
+
+(program
+    (function_definition 
+        keyword: "defun"
+        name: (symbol))
+    (definition name: (symbol))
+    (definition name: (symbol)))
