@@ -9,7 +9,7 @@
 
 module.exports = grammar({
   name: "lispbm",
-
+  extras: ($) => [/(\s|\f)/, $.comment],
   rules: {
     program: ($) => repeat(choice($._expression, $.comment)),
     _expression: ($) =>
@@ -86,8 +86,7 @@ module.exports = grammar({
       ),
     number: ($) => seq(/\-?\d+(\.\d+)?/, optional($._num_qualifier)),
     string: ($) => seq('"', repeat(choice(/[^"]/, '\\"')), '"'),
-
     byte_array: ($) => seq("[", repeat($.number), "]"),
-    comment: ($) => seq(";", /.*/),
+    comment: ($) => /;.*/,
   },
 });

@@ -497,7 +497,11 @@
   "extras": [
     {
       "type": "PATTERN",
-      "value": "\\s"
+      "value": "(\\s|\\f)"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
     }
   ],
   "conflicts": [],
