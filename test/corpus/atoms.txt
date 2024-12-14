@@ -1,0 +1,13 @@
+=====
+Atoms
+=====
+1
+hello
+'hello
+"hello"
+-------
+(program
+    (number)
+    (symbol)
+    (quote (symbol))
+    (string))

@@ -3,6 +3,60 @@
     "type": "application",
     "named": true,
     "fields": {
+      "arg": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "unquote",
+            "named": true
+          },
+          {
+            "type": "unquote_splice",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -13,60 +67,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "byte_array",
-          "named": true
-        },
-        {
-          "type": "definition",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "progn",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "special_form",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -98,11 +98,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "comment",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "definition",
@@ -269,6 +264,49 @@
     }
   },
   {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "byte_array",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "unquote_splice",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "number",
     "named": true,
     "fields": {}
@@ -405,19 +443,11 @@
       "required": true,
       "types": [
         {
-          "type": "application",
-          "named": true
-        },
-        {
           "type": "byte_array",
           "named": true
         },
         {
-          "type": "definition",
-          "named": true
-        },
-        {
-          "type": "function_definition",
+          "type": "list",
           "named": true
         },
         {
@@ -425,15 +455,7 @@
           "named": true
         },
         {
-          "type": "progn",
-          "named": true
-        },
-        {
           "type": "quote",
-          "named": true
-        },
-        {
-          "type": "special_form",
           "named": true
         },
         {
@@ -678,10 +700,6 @@
     "named": false
   },
   {
-    "type": ";",
-    "named": false
-  },
-  {
     "type": "[",
     "named": false
   },
@@ -700,6 +718,10 @@
   {
     "type": "b",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
   },
   {
     "type": "def",

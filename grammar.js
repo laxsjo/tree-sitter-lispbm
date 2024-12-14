@@ -21,6 +21,8 @@ module.exports = grammar({
         $._atom,
         $.progn,
       ),
+    _quoted: ($) => choice($.list, $._atom),
+    list: ($) => seq("(", repeat($._quoted), ")"),
     _atom: ($) =>
       choice(
         $.symbol,
@@ -39,14 +41,18 @@ module.exports = grammar({
         ")",
       ),
     application: ($) =>
-      seq("(", field("name", $.symbol), repeat($._expression), ")"),
-
+      seq(
+        "(",
+        field("name", $.symbol),
+        field("arg", repeat($._expression)),
+        ")",
+      ),
     progn: ($) => seq("{", repeat($._expression), "}"),
     // 1. The first character is a one of 'a' - 'z' or 'A' - 'Z' or '+-/=<>#!'.
     // 2. The rest of the characters are in 'a' - 'z' or 'A' - 'Z' or '0' - '9' or '+-/=<>!?_'.
     // 3. At most 256 characters long.
     symbol: ($) => /-?[a-zA-Z+/=<>#!][a-zA-Z0-9+\-/=<>!?_]{0,255}/,
-    quote: ($) => seq("'", $._expression),
+    quote: ($) => seq("'", $._quoted),
     unquote_splice: ($) => seq(",@", $._expression),
     unquote: ($) => seq(",", $._expression),
     arglist: ($) => seq("(", repeat($.symbol), ")"),

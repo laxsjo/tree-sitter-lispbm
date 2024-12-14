@@ -8,7 +8,12 @@ Functions
 
 (program
     (function_definition 
-        keyword: "defun"
-        name: (symbol))
-    (definition name: (symbol))
-    (definition name: (symbol)))
+        name: (symbol)
+        args: (arglist (symbol))
+        body: (application
+            name: (symbol) 
+            arg: (string)
+            arg: (symbol)))
+    
+    (definition name: (symbol) value: (number))
+    (definition name: (symbol) value: (number)))

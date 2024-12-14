@@ -5,3 +5,10 @@ Quoting
 '(1)
 '(a (b c))
 ----
+(program
+  (quote (symbol))
+  (quote (list (number)))
+  (quote 
+      (list 
+        (symbol) 
+        (list (symbol) (symbol)))))

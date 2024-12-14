@@ -1,0 +1,14 @@
+====
+Application
+====
+(+ 1 1)
+(print "hello world")
+----
+(program
+    (application
+        name: (symbol)
+        arg: (number)
+        arg: (number))
+    (application
+        name: (symbol)
+        arg: (string)))

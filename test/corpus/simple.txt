@@ -1,5 +1,5 @@
 ==================
-simple program
+Simple program
 ==================
 (print "hello" (+ nil 1) 1234 't)
 ---

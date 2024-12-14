@@ -47,6 +47,39 @@
         }
       ]
     },
+    "_quoted": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "list"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_atom"
+        }
+      ]
+    },
+    "list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_quoted"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
     "_atom": {
       "type": "CHOICE",
       "members": [
@@ -133,10 +166,14 @@
           }
         },
         {
-          "type": "REPEAT",
+          "type": "FIELD",
+          "name": "arg",
           "content": {
-            "type": "SYMBOL",
-            "name": "_expression"
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
           }
         },
         {
@@ -178,7 +215,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_expression"
+          "name": "_quoted"
         }
       ]
     },
@@ -481,17 +518,8 @@
       ]
     },
     "comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": ";"
-        },
-        {
-          "type": "PATTERN",
-          "value": ".*"
-        }
-      ]
+      "type": "PATTERN",
+      "value": ";.*"
     }
   },
   "extras": [
