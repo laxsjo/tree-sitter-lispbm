@@ -5,9 +5,13 @@ Atoms
 hello
 'hello
 "hello"
+'*
+'-
 -------
 (program
     (number)
     (symbol)
     (quote (symbol))
-    (string))
+    (string)
+    (quote (symbol))
+    (quote (symbol)))

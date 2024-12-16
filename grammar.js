@@ -14,18 +14,19 @@ module.exports = grammar({
     program: ($) => repeat(choice($._expression, $.comment)),
     _expression: ($) =>
       choice(
-        $.function_definition,
-        $.definition,
-        $.special_form,
-        $.application,
         $._atom,
+        $.application,
+        $.definition,
+        $.function_definition,
+        $.special_form,
         $.progn,
         $.quasiquote,
         $.quote,
       ),
+    comment: ($) => /;.*/,
+    _atom: ($) => choice($.symbol, prec(2, $.number), $.string, $.byte_array),
     splice: ($) => seq(",", $._expression),
     splice_list: ($) => seq(",@", $._expression),
-    _atom: ($) => choice($.symbol, $.number, $.string, $.byte_array),
     special_form: ($) =>
       seq(
         "(",
@@ -40,11 +41,22 @@ module.exports = grammar({
         field("arg", repeat($._expression)),
         ")",
       ),
-    progn: ($) => seq("{", repeat($._expression), "}"),
+
+    // Numbers
+    number: ($) => seq(/\-?\d+(\.\d+)?/, optional($._num_qualifier)),
+    _num_qualifier: ($) =>
+      choice("b", "i", "u", "i32", "u32", "i64", "u64", "f32", "f632"),
+
+    // Symbols
     // 1. The first character is a one of 'a' - 'z' or 'A' - 'Z' or '+-/=<>#!'.
     // 2. The rest of the characters are in 'a' - 'z' or 'A' - 'Z' or '0' - '9' or '+-/=<>!?_'.
     // 3. At most 256 characters long.
-    symbol: ($) => /-?[a-zA-Z+/=<>#!][a-zA-Z0-9+\-/=<>!?_]{0,255}/,
+    symbol: ($) => /[a-zA-Z+\/*\-=<>#!][a-zA-Z0-9+\-\/=<>!?_]{0,255}/,
+
+    string: ($) => seq('"', repeat(choice(/[^"]/, '\\"')), '"'),
+    byte_array: ($) => seq("[", repeat($.number), "]"),
+
+    progn: ($) => seq("{", repeat($._expression), "}"),
 
     // Quotes
     quote: ($) => seq("'", $._quoted),
@@ -57,10 +69,6 @@ module.exports = grammar({
       choice($.quasiquoted_list, $._atom, $.splice, $.splice_list),
     quasiquoted_list: ($) => seq("(", repeat($._quasiquoted), ")"),
 
-    _num_qualifier: ($) =>
-      choice("b", "i", "u", "i32", "u32", "i64", "u64", "f32", "f632"),
-
-    arglist: ($) => seq("(", repeat($.symbol), ")"),
     function_definition: ($) =>
       seq(
         "(",
@@ -70,6 +78,7 @@ module.exports = grammar({
         field("body", $._expression),
         ")",
       ),
+    arglist: ($) => seq("(", repeat($.symbol), ")"),
 
     definition: ($) =>
       seq(
@@ -79,6 +88,7 @@ module.exports = grammar({
         field("value", $._expression),
         ")",
       ),
+
     special: ($) =>
       choice(
         "quote",
@@ -92,9 +102,5 @@ module.exports = grammar({
         "var",
         "import",
       ),
-    number: ($) => seq(/\-?\d+(\.\d+)?/, optional($._num_qualifier)),
-    string: ($) => seq('"', repeat(choice(/[^"]/, '\\"')), '"'),
-    byte_array: ($) => seq("[", repeat($.number), "]"),
-    comment: ($) => /;.*/,
   },
 });
