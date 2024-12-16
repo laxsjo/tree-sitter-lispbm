@@ -7,8 +7,8 @@ Quoting
 ----
 (program
   (quote (symbol))
-  (quote (list (number)))
+  (quote (quoted_list (number)))
   (quote 
-      (list 
+      (quoted_list 
         (symbol) 
-        (list (symbol) (symbol)))))
+        (quoted_list (symbol) (symbol)))))

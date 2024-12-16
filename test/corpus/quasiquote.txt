@@ -1,0 +1,21 @@
+====================
+Quasiquotation
+====================
+`(1 ,(+ 1 1) ,@(list 1 2 3) 3)
+--------------------
+(program
+    (quasiquote
+        (quasiquoted_list
+            (number)
+            (splice
+                (application
+                    name: (symbol)
+                    arg: (number)
+                    arg: (number)))
+            (splice_list
+                (application
+                    name: (symbol)
+                    arg: (number)
+                    arg: (number)
+                    arg: (number)))
+            (number))))

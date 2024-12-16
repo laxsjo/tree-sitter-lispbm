@@ -32,6 +32,10 @@
             "named": true
           },
           {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
             "type": "quote",
             "named": true
           },
@@ -45,14 +49,6 @@
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "unquote",
-            "named": true
-          },
-          {
-            "type": "unquote_splice",
             "named": true
           }
         ]
@@ -142,6 +138,10 @@
             "named": true
           },
           {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
             "type": "quote",
             "named": true
           },
@@ -155,14 +155,6 @@
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "unquote",
-            "named": true
-          },
-          {
-            "type": "unquote_splice",
             "named": true
           }
         ]
@@ -212,6 +204,10 @@
             "named": true
           },
           {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
             "type": "quote",
             "named": true
           },
@@ -225,14 +221,6 @@
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "unquote",
-            "named": true
-          },
-          {
-            "type": "unquote_splice",
             "named": true
           }
         ]
@@ -261,49 +249,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "byte_array",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -344,6 +289,10 @@
           "named": true
         },
         {
+          "type": "quasiquote",
+          "named": true
+        },
+        {
           "type": "quote",
           "named": true
         },
@@ -357,14 +306,6 @@
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
           "named": true
         }
       ]
@@ -408,6 +349,10 @@
           "named": true
         },
         {
+          "type": "quasiquote",
+          "named": true
+        },
+        {
           "type": "quote",
           "named": true
         },
@@ -422,13 +367,83 @@
         {
           "type": "symbol",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "quasiquote",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
         {
-          "type": "unquote",
+          "type": "byte_array",
           "named": true
         },
         {
-          "type": "unquote_splice",
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quasiquoted_list",
+          "named": true
+        },
+        {
+          "type": "splice",
+          "named": true
+        },
+        {
+          "type": "splice_list",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quasiquoted_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "byte_array",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quasiquoted_list",
+          "named": true
+        },
+        {
+          "type": "splice",
+          "named": true
+        },
+        {
+          "type": "splice_list",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         }
       ]
@@ -447,15 +462,11 @@
           "named": true
         },
         {
-          "type": "list",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
         {
-          "type": "quote",
+          "type": "quoted_list",
           "named": true
         },
         {
@@ -465,13 +476,36 @@
         {
           "type": "symbol",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
         {
-          "type": "unquote",
+          "type": "byte_array",
           "named": true
         },
         {
-          "type": "unquote_splice",
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_list",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         }
       ]
@@ -526,6 +560,10 @@
           "named": true
         },
         {
+          "type": "quasiquote",
+          "named": true
+        },
+        {
           "type": "quote",
           "named": true
         },
@@ -540,13 +578,115 @@
         {
           "type": "symbol",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "splice",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
         {
-          "type": "unquote",
+          "type": "application",
           "named": true
         },
         {
-          "type": "unquote_splice",
+          "type": "byte_array",
+          "named": true
+        },
+        {
+          "type": "definition",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "progn",
+          "named": true
+        },
+        {
+          "type": "quasiquote",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "special_form",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "splice_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "application",
+          "named": true
+        },
+        {
+          "type": "byte_array",
+          "named": true
+        },
+        {
+          "type": "definition",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "progn",
+          "named": true
+        },
+        {
+          "type": "quasiquote",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "special_form",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         }
       ]
@@ -556,124 +696,6 @@
     "type": "string",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "unquote",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "byte_array",
-          "named": true
-        },
-        {
-          "type": "definition",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "progn",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "special_form",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "unquote_splice",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "byte_array",
-          "named": true
-        },
-        {
-          "type": "definition",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "progn",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "special_form",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "unquote",
-          "named": true
-        },
-        {
-          "type": "unquote_splice",
-          "named": true
-        }
-      ]
-    }
   },
   {
     "type": "\"",
@@ -709,6 +731,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "`",
     "named": false
   },
   {

@@ -20,19 +20,12 @@ module.exports = grammar({
         $.application,
         $._atom,
         $.progn,
-      ),
-    _quoted: ($) => choice($.list, $._atom),
-    list: ($) => seq("(", repeat($._quoted), ")"),
-    _atom: ($) =>
-      choice(
-        $.symbol,
-        $.number,
-        $.string,
+        $.quasiquote,
         $.quote,
-        $.unquote,
-        $.unquote_splice,
-        $.byte_array,
       ),
+    splice: ($) => seq(",", $._expression),
+    splice_list: ($) => seq(",@", $._expression),
+    _atom: ($) => choice($.symbol, $.number, $.string, $.byte_array),
     special_form: ($) =>
       seq(
         "(",
@@ -52,13 +45,22 @@ module.exports = grammar({
     // 2. The rest of the characters are in 'a' - 'z' or 'A' - 'Z' or '0' - '9' or '+-/=<>!?_'.
     // 3. At most 256 characters long.
     symbol: ($) => /-?[a-zA-Z+/=<>#!][a-zA-Z0-9+\-/=<>!?_]{0,255}/,
+
+    // Quotes
     quote: ($) => seq("'", $._quoted),
-    unquote_splice: ($) => seq(",@", $._expression),
-    unquote: ($) => seq(",", $._expression),
-    arglist: ($) => seq("(", repeat($.symbol), ")"),
+    _quoted: ($) => choice($.quoted_list, $._atom),
+    quoted_list: ($) => seq("(", repeat($._quoted), ")"),
+
+    // Quasiquote
+    quasiquote: ($) => seq("`", $._quasiquoted),
+    _quasiquoted: ($) =>
+      choice($.quasiquoted_list, $._atom, $.splice, $.splice_list),
+    quasiquoted_list: ($) => seq("(", repeat($._quasiquoted), ")"),
+
     _num_qualifier: ($) =>
       choice("b", "i", "u", "i32", "u32", "i64", "u64", "f32", "f632"),
 
+    arglist: ($) => seq("(", repeat($.symbol), ")"),
     function_definition: ($) =>
       seq(
         "(",

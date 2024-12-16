@@ -44,39 +44,40 @@
         {
           "type": "SYMBOL",
           "name": "progn"
-        }
-      ]
-    },
-    "_quoted": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "list"
         },
         {
           "type": "SYMBOL",
-          "name": "_atom"
+          "name": "quasiquote"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "quote"
         }
       ]
     },
-    "list": {
+    "splice": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "("
+          "value": ","
         },
         {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_quoted"
-          }
-        },
+          "type": "SYMBOL",
+          "name": "_expression"
+        }
+      ]
+    },
+    "splice_list": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "STRING",
-          "value": ")"
+          "value": ",@"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
         }
       ]
     },
@@ -94,18 +95,6 @@
         {
           "type": "SYMBOL",
           "name": "string"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "quote"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "unquote"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "unquote_splice"
         },
         {
           "type": "SYMBOL",
@@ -219,33 +208,20 @@
         }
       ]
     },
-    "unquote_splice": {
-      "type": "SEQ",
+    "_quoted": {
+      "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": ",@"
+          "type": "SYMBOL",
+          "name": "quoted_list"
         },
         {
           "type": "SYMBOL",
-          "name": "_expression"
+          "name": "_atom"
         }
       ]
     },
-    "unquote": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": ","
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
-        }
-      ]
-    },
-    "arglist": {
+    "quoted_list": {
       "type": "SEQ",
       "members": [
         {
@@ -256,7 +232,61 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "symbol"
+            "name": "_quoted"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "quasiquote": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "`"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_quasiquoted"
+        }
+      ]
+    },
+    "_quasiquoted": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "quasiquoted_list"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_atom"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "splice"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "splice_list"
+        }
+      ]
+    },
+    "quasiquoted_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_quasiquoted"
           }
         },
         {
@@ -303,6 +333,26 @@
         {
           "type": "STRING",
           "value": "f632"
+        }
+      ]
+    },
+    "arglist": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "symbol"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },
