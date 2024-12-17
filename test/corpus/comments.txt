@@ -1,0 +1,14 @@
+===========
+Commments
+===========
+; This is a comment
+(print "hello world") ; This is also a comment
+(print ;comment
+    "hello world") ; This is also a comment
+(print "hello;world")
+-----
+(program
+    (comment)
+    (application (symbol) (string)) (comment)
+    (application (symbol) (comment) (string)) (comment)
+    (application (symbol) (string)))

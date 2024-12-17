@@ -23,7 +23,7 @@ module.exports = grammar({
         $.quasiquote,
         $.quote,
       ),
-    comment: ($) => /;.*/,
+    comment: ($) => token(prec(-1, /;.*/)),
     _atom: ($) => choice($.symbol, prec(2, $.number), $.string, $.byte_array),
     splice: ($) => seq(",", $._expression),
     splice_list: ($) => seq(",@", $._expression),

@@ -23,15 +23,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "function_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "special_form"
+          "name": "_atom"
         },
         {
           "type": "SYMBOL",
@@ -39,7 +31,15 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_atom"
+          "name": "definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "function_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "special_form"
         },
         {
           "type": "SYMBOL",
@@ -52,6 +52,42 @@
         {
           "type": "SYMBOL",
           "name": "quote"
+        }
+      ]
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": -1,
+        "content": {
+          "type": "PATTERN",
+          "value": ";.*"
+        }
+      }
+    },
+    "_atom": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        },
+        {
+          "type": "PREC",
+          "value": 2,
+          "content": {
+            "type": "SYMBOL",
+            "name": "number"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "byte_array"
         }
       ]
     },
@@ -78,31 +114,6 @@
         {
           "type": "SYMBOL",
           "name": "_expression"
-        }
-      ]
-    },
-    "_atom": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "symbol"
-        },
-        {
-          "type": "PREC",
-          "value": 2,
-          "content": {
-            "type": "SYMBOL",
-            "name": "number"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "string"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "byte_array"
         }
       ]
     },
@@ -196,6 +207,100 @@
         }
       ]
     },
+    "_num_qualifier": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "b"
+        },
+        {
+          "type": "STRING",
+          "value": "i"
+        },
+        {
+          "type": "STRING",
+          "value": "u"
+        },
+        {
+          "type": "STRING",
+          "value": "i32"
+        },
+        {
+          "type": "STRING",
+          "value": "u32"
+        },
+        {
+          "type": "STRING",
+          "value": "i64"
+        },
+        {
+          "type": "STRING",
+          "value": "u64"
+        },
+        {
+          "type": "STRING",
+          "value": "f32"
+        },
+        {
+          "type": "STRING",
+          "value": "f632"
+        }
+      ]
+    },
+    "symbol": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z+\\/*\\-=<>#!][a-zA-Z0-9+\\-\\/=<>!?_]{0,255}"
+    },
+    "string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^\"]"
+              },
+              {
+                "type": "STRING",
+                "value": "\\\""
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
+    },
+    "byte_array": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "number"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
+    },
     "progn": {
       "type": "SEQ",
       "members": [
@@ -215,10 +320,6 @@
           "value": "}"
         }
       ]
-    },
-    "symbol": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z+\\/*\\-=<>#!][a-zA-Z0-9+\\-\\/=<>!?_]{0,255}"
     },
     "quote": {
       "type": "SEQ",
@@ -320,67 +421,6 @@
         }
       ]
     },
-    "_num_qualifier": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "b"
-        },
-        {
-          "type": "STRING",
-          "value": "i"
-        },
-        {
-          "type": "STRING",
-          "value": "u"
-        },
-        {
-          "type": "STRING",
-          "value": "i32"
-        },
-        {
-          "type": "STRING",
-          "value": "u32"
-        },
-        {
-          "type": "STRING",
-          "value": "i64"
-        },
-        {
-          "type": "STRING",
-          "value": "u64"
-        },
-        {
-          "type": "STRING",
-          "value": "f32"
-        },
-        {
-          "type": "STRING",
-          "value": "f632"
-        }
-      ]
-    },
-    "arglist": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "symbol"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
     "function_definition": {
       "type": "SEQ",
       "members": [
@@ -427,6 +467,26 @@
           "content": {
             "type": "SYMBOL",
             "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "arglist": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "symbol"
           }
         },
         {
@@ -521,59 +581,6 @@
           "value": "import"
         }
       ]
-    },
-    "string": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\""
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "PATTERN",
-                "value": "[^\"]"
-              },
-              {
-                "type": "STRING",
-                "value": "\\\""
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "\""
-        }
-      ]
-    },
-    "byte_array": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "["
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "number"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "]"
-        }
-      ]
-    },
-    "comment": {
-      "type": "PATTERN",
-      "value": ";.*"
     }
   },
   "extras": [
