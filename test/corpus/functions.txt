@@ -11,7 +11,7 @@ Functions
         name: (symbol)
         args: (arglist (symbol))
         body: (application
-            name: (symbol) 
+            function: (symbol) 
             arg: (string)
             arg: (symbol)))
     

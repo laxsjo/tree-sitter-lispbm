@@ -28,16 +28,19 @@ module.exports = grammar({
     splice: ($) => seq(",", $._expression),
     splice_list: ($) => seq(",@", $._expression),
     special_form: ($) =>
-      seq(
-        "(",
-        choice(field("special", $.special), $.function_definition),
-        repeat($._expression),
-        ")",
+      prec(
+        -1,
+        seq(
+          "(",
+          choice(field("special", $.special), $.function_definition),
+          repeat($._expression),
+          ")",
+        ),
       ),
     application: ($) =>
       seq(
         "(",
-        field("name", $.symbol),
+        field("function", $._expression),
         field("arg", repeat($._expression)),
         ")",
       ),

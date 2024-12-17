@@ -9,12 +9,12 @@ Quasiquotation
             (number)
             (splice
                 (application
-                    name: (symbol)
+                    function: (symbol)
                     arg: (number)
                     arg: (number)))
             (splice_list
                 (application
-                    name: (symbol)
+                    function: (symbol)
                     arg: (number)
                     arg: (number)
                     arg: (number)))

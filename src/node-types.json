@@ -53,10 +53,50 @@
           }
         ]
       },
-      "name": {
+      "function": {
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
           {
             "type": "symbol",
             "named": true

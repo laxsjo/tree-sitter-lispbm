@@ -3,12 +3,16 @@ Application
 ====
 (+ 1 1)
 (print "hello world")
+((a))
 ----
 (program
     (application
-        name: (symbol)
+        function: (symbol)
         arg: (number)
         arg: (number))
     (application
-        name: (symbol)
-        arg: (string)))
+        function: (symbol)
+        arg: (string))
+    (application
+        function: (application
+            function: (symbol))))
