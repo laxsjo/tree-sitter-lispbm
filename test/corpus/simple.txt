@@ -10,8 +10,8 @@ Simple program
         (string)
         (application
             (symbol)
-            (symbol)
+            (constant_symbol)
             (number))
         (number)
         (quote
-            (symbol))))
+            (constant_symbol))))

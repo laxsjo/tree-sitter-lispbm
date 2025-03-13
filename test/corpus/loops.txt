@@ -59,13 +59,13 @@ Loops
             function: (symbol)
             arg: (symbol)
             arg: (number))
-        body: (symbol))
+        body: (constant_symbol))
     (loopwhile
         condition: (application
             function: (symbol)
             arg: (symbol)
             arg: (number))
-        body: (symbol))
+        body: (constant_symbol))
     (looprange
         iterator: (symbol)
         start: (number)
@@ -81,15 +81,15 @@ Loops
     
     (loopwhile_thread
         args: (number)
-        condition: (symbol)
-        body: (symbol))
+        condition: (constant_symbol)
+        body: (constant_symbol))
     (loopwhile_thread
         args: (string)
-        condition: (symbol)
-        body: (symbol))
+        condition: (constant_symbol)
+        body: (constant_symbol))
     (loopwhile_thread
         args: (loopwhile_thread_args
             (string)
             (number))
-        condition: (symbol)
-        body: (symbol)))
+        condition: (constant_symbol)
+        body: (constant_symbol)))

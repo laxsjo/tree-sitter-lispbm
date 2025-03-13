@@ -7,6 +7,8 @@ hi
 _
 ?
 ?i32
+nil
+nilwhatever
 ---
 
 (program
@@ -15,4 +17,6 @@ _
     (symbol)
     (symbol)
     (symbol)
-    (symbol) (symbol))
+    (symbol) (symbol)
+    (constant_symbol)
+    (symbol))

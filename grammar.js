@@ -51,7 +51,9 @@ module.exports = grammar({
         prec(1, $.invalid_number),
         $.string,
         $.byte_array,
+        $.constant_symbol,
       ),
+    constant_symbol: ($) => choice("nil", "true", "false", "t"),
     splice: ($) => seq(",", $._expression),
     splice_list: ($) => seq(",@", $._expression),
     special_form: ($) =>

@@ -20,6 +20,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -131,6 +135,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -280,6 +288,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -443,6 +455,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -557,6 +573,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -667,6 +687,11 @@
     }
   },
   {
+    "type": "constant_symbol",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "definition",
     "named": true,
     "fields": {
@@ -694,6 +719,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -846,6 +875,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -987,6 +1020,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -1149,6 +1186,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -1289,6 +1330,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -1400,6 +1445,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -1533,6 +1582,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -1644,6 +1697,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -1781,6 +1838,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -1892,6 +1953,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -2012,6 +2077,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -2149,6 +2218,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -2269,6 +2342,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -2380,6 +2457,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -2517,6 +2598,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -2637,6 +2722,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -2748,6 +2837,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -2899,6 +2992,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -3010,6 +3107,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -3172,6 +3273,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -3309,6 +3414,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -3472,6 +3581,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -3597,6 +3710,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
@@ -3703,6 +3820,10 @@
             "named": true
           },
           {
+            "type": "constant_symbol",
+            "named": true
+          },
+          {
             "type": "invalid_number",
             "named": true
           },
@@ -3746,6 +3867,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -3897,6 +4022,10 @@
           "named": true
         },
         {
+          "type": "constant_symbol",
+          "named": true
+        },
+        {
           "type": "invalid_number",
           "named": true
         },
@@ -3956,6 +4085,10 @@
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "constant_symbol",
           "named": true
         },
         {
@@ -4083,6 +4216,10 @@
           "named": true
         },
         {
+          "type": "constant_symbol",
+          "named": true
+        },
+        {
           "type": "definition",
           "named": true
         },
@@ -4198,6 +4335,10 @@
           "named": true
         },
         {
+          "type": "constant_symbol",
+          "named": true
+        },
+        {
           "type": "invalid_number",
           "named": true
         },
@@ -4238,6 +4379,10 @@
       "types": [
         {
           "type": "byte_array",
+          "named": true
+        },
+        {
+          "type": "constant_symbol",
           "named": true
         },
         {
@@ -4295,6 +4440,10 @@
           "named": true
         },
         {
+          "type": "constant_symbol",
+          "named": true
+        },
+        {
           "type": "invalid_number",
           "named": true
         },
@@ -4327,6 +4476,10 @@
       "types": [
         {
           "type": "byte_array",
+          "named": true
+        },
+        {
+          "type": "constant_symbol",
           "named": true
         },
         {
@@ -4451,6 +4604,10 @@
           "named": true
         },
         {
+          "type": "constant_symbol",
+          "named": true
+        },
+        {
           "type": "definition",
           "named": true
         },
@@ -4570,6 +4727,10 @@
           "named": true
         },
         {
+          "type": "constant_symbol",
+          "named": true
+        },
+        {
           "type": "definition",
           "named": true
         },
@@ -4686,6 +4847,10 @@
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "constant_symbol",
           "named": true
         },
         {
@@ -4839,6 +5004,10 @@
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant_symbol",
             "named": true
           },
           {
@@ -5032,6 +5201,10 @@
     "named": true
   },
   {
+    "type": "false",
+    "named": false
+  },
+  {
     "type": "fn",
     "named": false
   },
@@ -5084,6 +5257,10 @@
     "named": false
   },
   {
+    "type": "nil",
+    "named": false
+  },
+  {
     "type": "or",
     "named": false
   },
@@ -5105,6 +5282,14 @@
   },
   {
     "type": "setq",
+    "named": false
+  },
+  {
+    "type": "t",
+    "named": false
+  },
+  {
+    "type": "true",
     "named": false
   },
   {

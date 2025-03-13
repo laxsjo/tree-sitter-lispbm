@@ -25,7 +25,7 @@ Matches
         value: (quote (symbol))
         arm: (pattern_arm
             pattern: (symbol)
-            value: (symbol))
+            value: (constant_symbol))
         arm: (pattern_arm
             pattern: (pattern_binding
                 name: (symbol))
@@ -40,11 +40,11 @@ Matches
         value: (quote (quoted_list (symbol) (symbol)))
         arm: (pattern_arm
             pattern: (pattern_list (symbol) (symbol))
-            value: (symbol)))
+            value: (constant_symbol)))
     (recv
         arm: (pattern_arm
             pattern: (number)
-            value: (symbol))
+            value: (constant_symbol))
         arm: (pattern_arm
             pattern: (pattern_list
                 (symbol)
@@ -62,7 +62,7 @@ Matches
         timeout: (number)
         arm: (pattern_arm
             pattern: (symbol)
-            value: (symbol))
+            value: (constant_symbol))
         arm: (pattern_arm
             pattern: (pattern_list
                 (symbol)
@@ -80,7 +80,7 @@ Matches
         value: (quote (symbol))
         arm: (pattern_arm
             pattern: (symbol)
-            value: (symbol))
+            value: (constant_symbol))
         arm: (pattern_arm
             pattern: (symbol)
             guard: (symbol)

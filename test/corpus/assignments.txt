@@ -23,7 +23,7 @@ Assignments
         value: (quote (quoted_list (number) (quoted_list (number)))))
     (let
         bindings: (bindings)
-        body: (symbol))
+        body: (constant_symbol))
     (let
         bindings: (bindings
             (binding
@@ -32,7 +32,7 @@ Assignments
             (binding
                 name: (symbol)
                 value: (number)))
-        body: (symbol))
+        body: (constant_symbol))
     (let
         bindings: (bindings
             (binding
@@ -42,4 +42,4 @@ Assignments
                 value: (quote (quoted_list
                     (number)
                     (number)))))
-        body: (symbol)))
+        body: (constant_symbol)))

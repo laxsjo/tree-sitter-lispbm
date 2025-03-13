@@ -172,6 +172,31 @@
         {
           "type": "SYMBOL",
           "name": "byte_array"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constant_symbol"
+        }
+      ]
+    },
+    "constant_symbol": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "nil"
+        },
+        {
+          "type": "STRING",
+          "value": "true"
+        },
+        {
+          "type": "STRING",
+          "value": "false"
+        },
+        {
+          "type": "STRING",
+          "value": "t"
         }
       ]
     },
