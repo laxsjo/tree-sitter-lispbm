@@ -4087,6 +4087,10 @@
           "named": true
         },
         {
+          "type": "directive",
+          "named": true
+        },
+        {
           "type": "function",
           "named": true
         },
@@ -5022,6 +5026,10 @@
   {
     "type": "defunret",
     "named": false
+  },
+  {
+    "type": "directive",
+    "named": true
   },
   {
     "type": "fn",

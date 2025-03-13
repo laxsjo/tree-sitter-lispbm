@@ -1,0 +1,9 @@
+===========
+Directive
+===========
+@const-start
+@const-end
+-----
+(program
+    (directive)
+    (directive))
