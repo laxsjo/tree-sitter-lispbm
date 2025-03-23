@@ -16,11 +16,27 @@
             "named": true
           },
           {
+            "type": "closure",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
           {
+            "type": "function",
+            "named": true
+          },
+          {
             "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
             "named": true
           },
           {
@@ -66,11 +82,27 @@
             "named": true
           },
           {
+            "type": "closure",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
           {
+            "type": "function",
+            "named": true
+          },
+          {
             "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
             "named": true
           },
           {
@@ -136,6 +168,164 @@
     }
   },
   {
+    "type": "closure",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arglist",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "environment": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "closure",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "definition",
     "named": true,
     "fields": {
@@ -162,11 +352,27 @@
             "named": true
           },
           {
+            "type": "closure",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
           {
+            "type": "function",
+            "named": true
+          },
+          {
             "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
             "named": true
           },
           {
@@ -202,6 +408,102 @@
     }
   },
   {
+    "type": "function",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arglist",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "fn",
+            "named": false
+          },
+          {
+            "type": "lambda",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "function_definition",
     "named": true,
     "fields": {
@@ -228,11 +530,27 @@
             "named": true
           },
           {
+            "type": "closure",
+            "named": true
+          },
+          {
             "type": "definition",
             "named": true
           },
           {
+            "type": "function",
+            "named": true
+          },
+          {
             "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
             "named": true
           },
           {
@@ -292,6 +610,200 @@
     }
   },
   {
+    "type": "macro",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arglist",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "macro",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "macro_definition",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arglist",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "defmacro",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "number",
     "named": true,
     "fields": {}
@@ -313,11 +825,27 @@
           "named": true
         },
         {
+          "type": "closure",
+          "named": true
+        },
+        {
           "type": "definition",
           "named": true
         },
         {
+          "type": "function",
+          "named": true
+        },
+        {
           "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
           "named": true
         },
         {
@@ -369,6 +897,10 @@
           "named": true
         },
         {
+          "type": "closure",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -377,7 +909,19 @@
           "named": true
         },
         {
+          "type": "function",
+          "named": true
+        },
+        {
           "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
           "named": true
         },
         {
@@ -595,11 +1139,27 @@
           "named": true
         },
         {
+          "type": "closure",
+          "named": true
+        },
+        {
           "type": "definition",
           "named": true
         },
         {
+          "type": "function",
+          "named": true
+        },
+        {
           "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
           "named": true
         },
         {
@@ -650,11 +1210,27 @@
           "named": true
         },
         {
+          "type": "closure",
+          "named": true
+        },
+        {
           "type": "definition",
           "named": true
         },
         {
+          "type": "function",
+          "named": true
+        },
+        {
           "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
           "named": true
         },
         {
@@ -705,11 +1281,27 @@
           "named": true
         },
         {
+          "type": "closure",
+          "named": true
+        },
+        {
           "type": "definition",
           "named": true
         },
         {
+          "type": "function",
+          "named": true
+        },
+        {
           "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
           "named": true
         },
         {
@@ -797,6 +1389,10 @@
     "named": false
   },
   {
+    "type": "closure",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true,
     "extra": true
@@ -807,6 +1403,10 @@
   },
   {
     "type": "define",
+    "named": false
+  },
+  {
+    "type": "defmacro",
     "named": false
   },
   {
@@ -823,6 +1423,10 @@
   },
   {
     "type": "f632",
+    "named": false
+  },
+  {
+    "type": "fn",
     "named": false
   },
   {
@@ -851,6 +1455,10 @@
   },
   {
     "type": "let",
+    "named": false
+  },
+  {
+    "type": "macro",
     "named": false
   },
   {

@@ -18,7 +18,11 @@ module.exports = grammar({
         $._atom,
         $.application,
         $.definition,
+        $.function,
+        $.closure,
         $.function_definition,
+        $.macro,
+        $.macro_definition,
         $.special_form,
         $.progn,
         $.quasiquote,
@@ -76,6 +80,24 @@ module.exports = grammar({
       choice($.quasiquoted_list, $._atom, $.splice, $.splice_list),
     quasiquoted_list: ($) => seq("(", repeat($._quasiquoted), ")"),
 
+    // Functions
+    function: ($) =>
+      seq(
+        "(",
+        field("keyword", choice("fn", "lambda")),
+        field("args", $.arglist),
+        field("body", $._expression),
+        ")",
+      ),
+    closure: ($) =>
+      seq(
+        "(",
+        field("keyword", "closure"),
+        field("args", $.arglist),
+        field("body", $._expression),
+        field("environment", $._expression),
+        ")",
+      ),
     function_definition: ($) =>
       seq(
         "(",
@@ -85,6 +107,26 @@ module.exports = grammar({
         field("body", $._expression),
         ")",
       ),
+    
+    // Macros
+    macro: ($) =>
+      seq(
+        "(",
+        field("keyword", "macro"),
+        field("args", $.arglist),
+        field("body", $._expression),
+        ")",
+      ),
+    macro_definition: ($) =>
+      seq(
+        "(",
+        field("keyword", "defmacro"),
+        field("name", $.symbol),
+        field("args", $.arglist),
+        field("body", $._expression),
+        ")",
+      ),
+    
     arglist: ($) => seq("(", repeat($.symbol), ")"),
 
     definition: ($) =>
@@ -98,7 +140,6 @@ module.exports = grammar({
 
     special: ($) =>
       choice(
-        "lambda",
         "if",
         "progn",
         "and",
