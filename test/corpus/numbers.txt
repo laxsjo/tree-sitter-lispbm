@@ -5,7 +5,18 @@ Numeric types
 -1
 1.0
 -1.0
+1b
+1i
+1u
+1i32
+1u32
 1.0f32
+1.0f64
+1f32
+1.0i32
+1.0f65
+-1.0hello
+1 i
 ---------
 
 (program
@@ -13,4 +24,15 @@ Numeric types
     (number)
     (number)
     (number)
-    (number))
+    (number)
+    (number)
+    (number)
+    (number)
+    (number)
+    (number)
+    (number)
+    (invalid_number)
+    (invalid_number)
+    (number) (symbol)
+    (number) (symbol)
+    (number) (symbol))
