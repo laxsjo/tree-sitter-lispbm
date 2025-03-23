@@ -1,0 +1,95 @@
+=========
+Loops
+=========
+(loop ((a 0))
+    (<= a 10)
+    (progn 
+        (setq sum (+ sum a))
+        (setq a (+ a 1))))
+(loopfor i 0 (< i 5) (+ i 1)
+    nil)
+(loopwhile (< a 10)
+    nil)
+(looprange i 0 10
+    i)
+(loopforeach i '(1 2 3)
+    i)
+
+(loopwhile-thd 100 t
+    nil)
+(loopwhile-thd "my-thread" t
+    nil)
+(loopwhile-thd ("my-thread" 100) t
+    nil)
+---------
+
+(program
+    (loop
+        bindings: (bindings
+            (binding
+                name: (symbol)
+                value: (number)))
+        condition: (application
+            function: (symbol)
+            arg: (symbol)
+            arg: (number))
+        body: (progn
+            (special_form
+                special: (special)
+                (symbol)
+                (application
+                    function: (symbol)
+                    arg: (symbol)
+                    arg: (symbol)))
+            (special_form
+                special: (special)
+                (symbol)
+                (application
+                    function: (symbol)
+                    arg: (symbol)
+                    arg: (number)))))
+    (loopfor
+        iterator: (symbol)
+        start: (number)
+        condition: (application
+            function: (symbol)
+            arg: (symbol)
+            arg: (number))
+        update: (application
+            function: (symbol)
+            arg: (symbol)
+            arg: (number))
+        body: (symbol))
+    (loopwhile
+        condition: (application
+            function: (symbol)
+            arg: (symbol)
+            arg: (number))
+        body: (symbol))
+    (looprange
+        iterator: (symbol)
+        start: (number)
+        end: (number)
+        body: (symbol))
+    (loopforeach
+        iterator: (symbol)
+        list: (quote (quoted_list
+            (number)
+            (number)
+            (number)))
+        body: (symbol))
+    
+    (loopwhile_thread
+        args: (number)
+        condition: (symbol)
+        body: (symbol))
+    (loopwhile_thread
+        args: (string)
+        condition: (symbol)
+        body: (symbol))
+    (loopwhile_thread
+        args: (loopwhile_thread_args
+            (string)
+            (number))
+        condition: (symbol)
+        body: (symbol)))

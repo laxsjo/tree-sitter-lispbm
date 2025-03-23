@@ -35,6 +35,12 @@ module.exports = grammar({
         $.match,
         $.recv,
         $.recv_timeout,
+        $.loop,
+        $.loopfor,
+        $.loopwhile,
+        $.looprange,
+        $.loopforeach,
+        $.loopwhile_thread,
       ),
     comment: ($) => token(prec(-1, /;.*/)),
     _atom: ($) => choice($.symbol, $.number, prec(1, $.invalid_number), $.string, $.byte_array),
@@ -256,6 +262,64 @@ module.exports = grammar({
         ")",
       )),
     wildcard: ($) => prec(1, "_"),
+    
+    // Loops
+    loop: ($) => seq(
+      "(",
+      field("keyword", "loop"),
+      field("bindings", $.bindings),
+      field("condition", $._expression),
+      field("body", $._expression),
+      ")",
+    ),
+    loopfor: ($) => seq(
+      "(",
+      field("keyword", "loopfor"),
+      field("iterator", $.symbol),
+      field("start", $._expression),
+      field("condition", $._expression),
+      field("update", $._expression),
+      field("body", $._expression),
+      ")",
+    ),
+    loopwhile: ($) => seq(
+      "(",
+      field("keyword", "loopwhile"),
+      field("condition", $._expression),
+      field("body", $._expression),
+      ")",
+    ),
+    looprange: ($) => seq(
+      "(",
+      field("keyword", "looprange"),
+      field("iterator", $.symbol),
+      field("start", $._expression),
+      field("end", $._expression),
+      field("body", $._expression),
+      ")",
+    ),
+    loopforeach: ($) => seq(
+      "(",
+      field("keyword", "loopforeach"),
+      field("iterator", $.symbol),
+      field("list", $._expression),
+      field("body", $._expression),
+      ")",
+    ),
+    loopwhile_thread: ($) => seq(
+      "(",
+      field("keyword", "loopwhile-thd"),
+      // Note: The args field isn't evaluated
+      field("args", choice($.loopwhile_thread_args, $.string, $.number)),
+      field("condition", $._expression),
+      field("body", $._expression),
+      ")",
+    ),
+    loopwhile_thread_args: ($) => seq(
+      "(",
+      repeat(choice($.string, $.number)),
+      ")",
+    ),
 
     special: ($) =>
       choice(

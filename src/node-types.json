@@ -40,6 +40,30 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
             "type": "macro",
             "named": true
           },
@@ -127,6 +151,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -252,6 +300,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -391,6 +463,30 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
             "type": "macro",
             "named": true
           },
@@ -478,6 +574,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -594,6 +714,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -722,6 +866,30 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
             "type": "macro",
             "named": true
           },
@@ -839,6 +1007,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -977,6 +1169,30 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
             "type": "macro",
             "named": true
           },
@@ -1043,6 +1259,1889 @@
     }
   },
   {
+    "type": "loop",
+    "named": true,
+    "fields": {
+      "bindings": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bindings",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "loop",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "loopfor",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "loopfor",
+            "named": false
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "update": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "loopforeach",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "loopforeach",
+            "named": false
+          }
+        ]
+      },
+      "list": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "looprange",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "end": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "looprange",
+            "named": false
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "loopwhile",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "loopwhile",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "loopwhile_thread",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "loopwhile_thread_args",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "application",
+            "named": true
+          },
+          {
+            "type": "byte_array",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "definition",
+            "named": true
+          },
+          {
+            "type": "function",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "invalid_number",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "macro_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "progn",
+            "named": true
+          },
+          {
+            "type": "quasiquote",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "recv",
+            "named": true
+          },
+          {
+            "type": "recv_timeout",
+            "named": true
+          },
+          {
+            "type": "special_form",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "loopwhile-thd",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "loopwhile_thread_args",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "macro",
     "named": true,
     "fields": {
@@ -1090,6 +3189,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -1206,6 +3329,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -1345,6 +3492,30 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
+            "named": true
+          },
+          {
             "type": "macro",
             "named": true
           },
@@ -1443,6 +3614,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -1571,6 +3766,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -1760,6 +3979,30 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "loopfor",
+          "named": true
+        },
+        {
+          "type": "loopforeach",
+          "named": true
+        },
+        {
+          "type": "looprange",
+          "named": true
+        },
+        {
+          "type": "loopwhile",
+          "named": true
+        },
+        {
+          "type": "loopwhile_thread",
+          "named": true
+        },
+        {
           "type": "macro",
           "named": true
         },
@@ -1857,6 +4100,30 @@
         },
         {
           "type": "let",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "loopfor",
+          "named": true
+        },
+        {
+          "type": "loopforeach",
+          "named": true
+        },
+        {
+          "type": "looprange",
+          "named": true
+        },
+        {
+          "type": "loopwhile",
+          "named": true
+        },
+        {
+          "type": "loopwhile_thread",
           "named": true
         },
         {
@@ -2200,6 +4467,30 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "loopfor",
+          "named": true
+        },
+        {
+          "type": "loopforeach",
+          "named": true
+        },
+        {
+          "type": "looprange",
+          "named": true
+        },
+        {
+          "type": "loopwhile",
+          "named": true
+        },
+        {
+          "type": "loopwhile_thread",
+          "named": true
+        },
+        {
           "type": "macro",
           "named": true
         },
@@ -2295,6 +4586,30 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "loopfor",
+          "named": true
+        },
+        {
+          "type": "loopforeach",
+          "named": true
+        },
+        {
+          "type": "looprange",
+          "named": true
+        },
+        {
+          "type": "loopwhile",
+          "named": true
+        },
+        {
+          "type": "loopwhile_thread",
+          "named": true
+        },
+        {
           "type": "macro",
           "named": true
         },
@@ -2387,6 +4702,30 @@
         },
         {
           "type": "let",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "loopfor",
+          "named": true
+        },
+        {
+          "type": "loopforeach",
+          "named": true
+        },
+        {
+          "type": "looprange",
+          "named": true
+        },
+        {
+          "type": "loopwhile",
+          "named": true
+        },
+        {
+          "type": "loopwhile_thread",
           "named": true
         },
         {
@@ -2516,6 +4855,30 @@
           },
           {
             "type": "let",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "loopfor",
+            "named": true
+          },
+          {
+            "type": "loopforeach",
+            "named": true
+          },
+          {
+            "type": "looprange",
+            "named": true
+          },
+          {
+            "type": "loopwhile",
+            "named": true
+          },
+          {
+            "type": "loopwhile_thread",
             "named": true
           },
           {
@@ -2678,6 +5041,30 @@
   },
   {
     "type": "let",
+    "named": false
+  },
+  {
+    "type": "loop",
+    "named": false
+  },
+  {
+    "type": "loopfor",
+    "named": false
+  },
+  {
+    "type": "loopforeach",
+    "named": false
+  },
+  {
+    "type": "looprange",
+    "named": false
+  },
+  {
+    "type": "loopwhile",
+    "named": false
+  },
+  {
+    "type": "loopwhile-thd",
     "named": false
   },
   {
