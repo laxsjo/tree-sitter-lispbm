@@ -36,6 +36,51 @@
         # For `nix flake check`
         checks = {
           formatting = treefmtEval.config.build.check self;
+          # Checks that the parser source is in sync with grammar.js
+          parserGenerated =
+            pkgs.runCommand "parser-generated-check"
+              {
+                nativeBuildInputs = [
+                  pkgs.git
+                  pkgs.tree-sitter
+                  pkgs.nodejs_23
+                ];
+              }
+              ''
+                # Create source directory.
+                set -e
+                cp -r ${self} source/
+                chmod -R a+w source/
+                cd source/
+
+                tree-sitter generate
+
+                # Check that nothing changed
+                if ! diff --color=always --recursive ${self} .; then
+                  echo "Generated parser not up to date with 'parser.js'. Please run the following:"
+                  echo "  tree-sitter generate"
+                  exit 1
+                fi
+
+                touch $out
+              '';
+          # Checks that `tree-sitter test` passes
+          parserTests =
+            pkgs.runCommandCC "parser-tests-check"
+              {
+                nativeBuildInputs = [ pkgs.tree-sitter ];
+              }
+              ''
+                # Create source directory.
+                set -e
+                cp -r ${self} source/
+                cd source/
+                export HOME=$TMPDIR
+
+                tree-sitter test
+
+                touch $out
+              '';
         };
       }
     );
