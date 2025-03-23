@@ -2,7 +2,10 @@
 name = "tree-sitter-lispbm"
 description = "lispBM"
 version = "0.1.0"
-authors = ["Joakim Lundborg <joakim.lundborg@gmail.com>"]
+authors = [
+  "Joakim Lundborg <joakim.lundborg@gmail.com>",
+  "Rasmus Söderhielm <rasmus.soderhielm@gmail.com>",
+]
 license = "MIT"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "lispbm"]

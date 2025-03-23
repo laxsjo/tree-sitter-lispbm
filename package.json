@@ -9,6 +9,13 @@
     "email": "joakim.lundborg@gmail.com",
     "url": "https://github.com/cortex"
   },
+  "contributors": [
+    {
+      "name": "Rasmus Söderhielm",
+      "email": "rasmus.soderhielm@gmail.com",
+      "url": "https://github.com/laxsjo"
+    }
+  ],
   "main": "bindings/node",
   "types": "bindings/node",
   "keywords": [

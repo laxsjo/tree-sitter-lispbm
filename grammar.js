@@ -1,6 +1,7 @@
 /**
  * @file lispBM
  * @author Joakim Lundborg <joakim.lundborg@gmail.com>
+ * @author Rasmus Söderhielm <rasmus.soderhielm@gmail.com>
  * @license MIT
  */
 
