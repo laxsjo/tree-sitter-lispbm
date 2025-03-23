@@ -1,0 +1,18 @@
+==================
+Symbols
+==================
+hi
+>
+<hello>
+_
+?
+?i32
+---
+
+(program
+    (symbol)
+    (symbol)
+    (symbol)
+    (symbol)
+    (symbol)
+    (symbol) (symbol))

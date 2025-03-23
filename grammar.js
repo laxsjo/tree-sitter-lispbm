@@ -59,7 +59,11 @@ module.exports = grammar({
     // 1. The first character is a one of 'a' - 'z' or 'A' - 'Z' or '+-/=<>#!'.
     // 2. The rest of the characters are in 'a' - 'z' or 'A' - 'Z' or '0' - '9' or '+-/=<>!?_'.
     // 3. At most 256 characters long.
-    symbol: ($) => /[a-zA-Z+\/*\-=<>#!][a-zA-Z0-9+\-\/=<>!?_]{0,255}/,
+    symbol: ($) => choice(
+      /[a-zA-Z+\/*\-=<>#!][a-zA-Z0-9+\-\/=<>!?_]{0,255}/,
+      "_",
+      "?"
+    ),
 
     string: ($) => seq('"', repeat(choice(/[^"]/, '\\"')), '"'),
     byte_array: ($) => seq("[", repeat($.number), "]"),

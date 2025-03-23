@@ -1341,6 +1341,11 @@
     "fields": {}
   },
   {
+    "type": "symbol",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -1365,6 +1370,10 @@
     "named": false
   },
   {
+    "type": "?",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -1374,6 +1383,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "_",
     "named": false
   },
   {
@@ -1476,10 +1489,6 @@
   {
     "type": "setq",
     "named": false
-  },
-  {
-    "type": "symbol",
-    "named": true
   },
   {
     "type": "u",

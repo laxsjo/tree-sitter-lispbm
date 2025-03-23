@@ -269,8 +269,21 @@
       ]
     },
     "symbol": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z+\\/*\\-=<>#!][a-zA-Z0-9+\\-\\/=<>!?_]{0,255}"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[a-zA-Z+\\/*\\-=<>#!][a-zA-Z0-9+\\-\\/=<>!?_]{0,255}"
+        },
+        {
+          "type": "STRING",
+          "value": "_"
+        },
+        {
+          "type": "STRING",
+          "value": "?"
+        }
+      ]
     },
     "string": {
       "type": "SEQ",
