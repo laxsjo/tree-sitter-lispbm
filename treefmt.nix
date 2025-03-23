@@ -23,6 +23,7 @@
     "package.json"
     "pyproject.toml"
     "queries/**"
+    "README.md"
     "setup.py"
     "test/**"
     "tree-sitter.json"
