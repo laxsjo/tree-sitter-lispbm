@@ -25,6 +25,11 @@ module.exports = grammar({
         $.macro_definition,
         $.special_form,
         $.progn,
+        // Note that we define a `var` expression to be valid anywhere, not just
+        // within `progn` expressions, so that invalid programs get nicer/more
+        // predictable highlighting.
+        $.var,
+        $.let,
         $.quasiquote,
         $.quote,
       ),
@@ -81,8 +86,11 @@ module.exports = grammar({
 
     string: ($) => seq('"', repeat(choice(/[^"]/, '\\"')), '"'),
     byte_array: ($) => seq("[", repeat($.number), "]"),
-
-    progn: ($) => seq("{", repeat($._expression), "}"),
+    
+    progn: ($) => choice(
+      seq("{", repeat($._expression), "}"),
+      seq("(", field("keyword", "progn"), repeat($._expression), ")"),
+    ),
 
     // Quotes
     quote: ($) => choice(
@@ -98,6 +106,42 @@ module.exports = grammar({
       choice($.quasiquoted_list, $._atom, $.splice, $.splice_list),
     quasiquoted_list: ($) => seq("(", repeat($._quasiquoted), ")"),
 
+    // Var
+    var: ($) => seq(
+      "(",
+      field("keyword", "var"),
+      field("name", $._destructure_pattern),
+      field("value", $._expression),
+      ")",
+    ),
+    
+    // Let
+    let: ($) => seq(
+      "(",
+      field("keyword", "let"),
+      field("bindings", $.bindings),
+      field("body", $._expression),
+      ")",
+    ),
+    bindings: ($) => seq(
+      "(",
+      repeat($.binding),
+      ")",
+    ),
+    binding: ($) => seq(
+      "(",
+      field("name", $._destructure_pattern),
+      field("value", $._expression),
+      ")",
+    ), 
+    
+    _destructure_pattern: ($) => choice($.symbol, $.destructure_list),
+    destructure_list: ($) => seq(
+      "(",
+      repeat($._destructure_pattern),
+      ")",
+    ),
+    
     // Functions
     function: ($) =>
       seq(
@@ -159,12 +203,9 @@ module.exports = grammar({
     special: ($) =>
       choice(
         "if",
-        "progn",
         "and",
         "or",
-        "let",
         "setq",
-        "var",
         "import",
       ),
   },
