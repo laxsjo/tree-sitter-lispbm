@@ -6,9 +6,9 @@ Quoting
 '(a (b c))
 ----
 (program
-  (quote (symbol))
-  (quote (quoted_list (number)))
-  (quote 
-      (quoted_list 
-        (symbol) 
-        (quoted_list (symbol) (symbol)))))
+    (quote (symbol))
+    (quote (quoted_list (number)))
+    (quote 
+        (quoted_list 
+            (symbol) 
+            (quoted_list (symbol) (symbol)))))

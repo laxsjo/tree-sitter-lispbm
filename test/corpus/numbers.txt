@@ -9,8 +9,8 @@ Numeric types
 ---------
 
 (program
-  (number)
-  (number)
-  (number)
-  (number)
-  (number))
+    (number)
+    (number)
+    (number)
+    (number)
+    (number))
