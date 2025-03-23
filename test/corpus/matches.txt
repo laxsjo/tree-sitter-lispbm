@@ -1,0 +1,87 @@
+=========
+Matches
+=========
+(match 'value
+    (value nil)
+    ((? other) (list? other) 'list)
+    (_ 'other))
+(match '(a b)
+    ((a b) nil))
+(recv
+    (1 nil)
+    ((a (?i32 int)) int)
+    (_ (+ 1 2)))
+(recv-to 1.0
+    (a nil)
+    ((a (?i32 int)) int)
+    (_ (+ 1 2)))
+
+(match 'ugly-but-technically-legal
+    (? true)
+    (?? 2))
+---------
+(program
+    (match
+        value: (quote (symbol))
+        arm: (pattern_arm
+            pattern: (symbol)
+            value: (symbol))
+        arm: (pattern_arm
+            pattern: (pattern_binding
+                name: (symbol))
+            guard: (application
+                function: (symbol)
+                arg: (symbol))
+            value: (quote (symbol)))
+        arm: (pattern_arm
+            pattern: (wildcard)
+            value: (quote (symbol))))
+    (match
+        value: (quote (quoted_list (symbol) (symbol)))
+        arm: (pattern_arm
+            pattern: (pattern_list (symbol) (symbol))
+            value: (symbol)))
+    (recv
+        arm: (pattern_arm
+            pattern: (number)
+            value: (symbol))
+        arm: (pattern_arm
+            pattern: (pattern_list
+                (symbol)
+                (pattern_binding
+                    type: (symbol)
+                    name: (symbol)))
+            value: (symbol))
+        arm: (pattern_arm
+            pattern: (wildcard)
+            value: (application
+                function: (symbol)
+                arg: (number)
+                arg: (number))))
+    (recv_timeout
+        timeout: (number)
+        arm: (pattern_arm
+            pattern: (symbol)
+            value: (symbol))
+        arm: (pattern_arm
+            pattern: (pattern_list
+                (symbol)
+                (pattern_binding
+                    type: (symbol)
+                    name: (symbol)))
+            value: (symbol))
+        arm: (pattern_arm
+            pattern: (wildcard)
+            value: (application
+                function: (symbol)
+                arg: (number)
+                arg: (number))))
+    (match
+        value: (quote (symbol))
+        arm: (pattern_arm
+            pattern: (symbol)
+            value: (symbol))
+        arm: (pattern_arm
+            pattern: (symbol)
+            guard: (symbol)
+            value: (number))))

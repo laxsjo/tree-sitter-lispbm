@@ -32,6 +32,9 @@ module.exports = grammar({
         $.let,
         $.quasiquote,
         $.quote,
+        $.match,
+        $.recv,
+        $.recv_timeout,
       ),
     comment: ($) => token(prec(-1, /;.*/)),
     _atom: ($) => choice($.symbol, $.number, prec(1, $.invalid_number), $.string, $.byte_array),
@@ -199,6 +202,60 @@ module.exports = grammar({
         field("value", $._expression),
         ")",
       ),
+    
+    // Match, recv, and recv-to
+    match: ($) =>
+      seq(
+        "(",
+        field("keyword", "match"),
+        field("value", $._expression),
+        field("arm", repeat($.pattern_arm)),
+        ")",
+      ),
+    recv: ($) =>
+      seq(
+        "(",
+        field("keyword", "recv"),
+        field("arm", repeat($.pattern_arm)),
+        ")",
+      ),
+    recv_timeout: ($) =>
+      seq(
+        "(",
+        field("keyword", "recv-to"),
+        field("timeout", $.number),
+        field("arm", repeat($.pattern_arm)),
+        ")",
+      ),
+    pattern_arm: ($) =>
+      seq(
+        "(",
+        field("pattern", $._pattern),
+        optional(field("guard", $._expression)),
+        field("value", $._expression),
+        ")",
+      ),
+    _pattern: ($) =>
+      choice(
+        $.wildcard,
+        $._atom,
+        $.pattern_binding,
+        $.pattern_list,
+      ),
+    pattern_list: ($) => seq(
+      "(",
+      repeat($._pattern),
+      ")",
+    ),
+    pattern_binding: ($) =>
+      prec(2, seq(
+        "(",
+        field("match_any", "?"),
+        optional(field("type", $.symbol)),
+        field("name", $.symbol),
+        ")",
+      )),
+    wildcard: ($) => prec(1, "_"),
 
     special: ($) =>
       choice(
