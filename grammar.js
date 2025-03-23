@@ -63,7 +63,10 @@ module.exports = grammar({
     progn: ($) => seq("{", repeat($._expression), "}"),
 
     // Quotes
-    quote: ($) => seq("'", $._quoted),
+    quote: ($) => choice(
+      seq("'", $._quoted),
+      seq("(", field("keyword", "quote"), $._quoted, ")")
+    ),
     _quoted: ($) => choice($.quoted_list, $._atom),
     quoted_list: ($) => seq("(", repeat($._quoted), ")"),
 
@@ -95,7 +98,6 @@ module.exports = grammar({
 
     special: ($) =>
       choice(
-        "quote",
         "lambda",
         "if",
         "progn",

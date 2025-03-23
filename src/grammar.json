@@ -326,15 +326,45 @@
       ]
     },
     "quote": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "'"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "'"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_quoted"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "_quoted"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "FIELD",
+              "name": "keyword",
+              "content": {
+                "type": "STRING",
+                "value": "quote"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_quoted"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
         }
       ]
     },
@@ -544,10 +574,6 @@
     "special": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "STRING",
-          "value": "quote"
-        },
         {
           "type": "STRING",
           "value": "lambda"
