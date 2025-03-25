@@ -2,6 +2,9 @@
 Functions
 =========
 (defun greet (msg) (print "hello" msg))
+(fn (msg) msg)
+(lambda (msg) msg)
+(closure (msg) msg my-environment)
 (def test 1)
 (define a 1)
 ------
@@ -14,6 +17,16 @@ Functions
             function: (symbol) 
             arg: (string)
             arg: (symbol)))
+    (function
+        args: (arglist (symbol))
+        body: (symbol))
+    (function
+        args: (arglist (symbol))
+        body: (symbol))
+    (closure
+        args: (arglist (symbol))
+        body: (symbol)
+        environment: (symbol))
     
     (definition name: (symbol) value: (number))
     (definition name: (symbol) value: (number)))

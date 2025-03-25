@@ -1,0 +1,15 @@
+=========
+Macros
+=========
+(macro (a) a)
+(defmacro my-macro (a) a)
+---------
+
+(program
+    (macro
+        args: (arglist (symbol))
+        body: (symbol))
+    (macro_definition
+        name: (symbol)
+        args: (arglist (symbol))
+        body: (symbol)))

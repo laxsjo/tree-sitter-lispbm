@@ -5,13 +5,13 @@ Simple program
 ---
 
 (program
-  (application
-    (symbol)
-    (string)
     (application
-      (symbol)
-      (symbol)
-      (number))
-    (number)
-    (quote
-      (symbol))))
+        (symbol)
+        (string)
+        (application
+            (symbol)
+            (symbol)
+            (number))
+        (number)
+        (quote
+            (symbol))))
