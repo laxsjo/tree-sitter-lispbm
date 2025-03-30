@@ -478,6 +478,22 @@
         }
       ]
     },
+    "directive": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "@const-end"
+          },
+          {
+            "type": "STRING",
+            "value": "@const-start"
+          }
+        ]
+      }
+    },
     "progn": {
       "type": "CHOICE",
       "members": [
@@ -1723,6 +1739,10 @@
     {
       "type": "SYMBOL",
       "name": "comment"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "directive"
     }
   ],
   "conflicts": [],

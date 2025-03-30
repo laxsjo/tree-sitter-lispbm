@@ -10,7 +10,12 @@
 
 module.exports = grammar({
   name: "lispbm",
-  extras: ($) => [/(\s|\f)/, $.comment],
+  extras: ($) => [
+    /(\s|\f)/,
+    $.comment,
+    // at-directives are valid anywhere
+    $.directive
+  ],
   rules: {
     program: ($) => repeat(choice($._expression, $.comment)),
     _expression: ($) =>
@@ -95,6 +100,12 @@ module.exports = grammar({
 
     string: ($) => seq('"', repeat(choice(/[^"]/, '\\"')), '"'),
     byte_array: ($) => seq("[", repeat($.number), "]"),
+    
+    // Directives
+    directive: ($) => token(choice(
+      "@const-end",
+      "@const-start",
+    )),
     
     progn: ($) => choice(
       seq("{", repeat($._expression), "}"),

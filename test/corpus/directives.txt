@@ -1,0 +1,15 @@
+==================
+Directives
+==================
+@const-start
+(my-program)
+@const-endanother-symbol
+ @const-start 
+---
+
+(program
+    (directive)
+    (application
+        function: (symbol))
+    (directive) (symbol)
+    (directive))

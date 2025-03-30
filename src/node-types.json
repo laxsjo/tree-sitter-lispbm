@@ -5024,6 +5024,11 @@
     "named": false
   },
   {
+    "type": "directive",
+    "named": true,
+    "extra": true
+  },
+  {
     "type": "fn",
     "named": false
   },
