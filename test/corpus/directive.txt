@@ -3,7 +3,15 @@ Directive
 ===========
 @const-start
 @const-end
+ @const-start
+;@const-start
+(hello "world@const-start")
+(send "hello@world.com")
 -----
 (program
     (directive)
-    (directive))
+    (directive)
+    (directive)
+    (comment)
+    (application (symbol) (string))
+    (application (symbol) (string)))
