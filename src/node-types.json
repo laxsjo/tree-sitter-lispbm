@@ -34,23 +34,11 @@
     ]
   },
   {
-    "type": "_expression",
+    "type": "_callable",
     "named": true,
     "subtypes": [
       {
-        "type": "_atom",
-        "named": true
-      },
-      {
-        "type": "application",
-        "named": true
-      },
-      {
         "type": "closure",
-        "named": true
-      },
-      {
-        "type": "definition",
         "named": true
       },
       {
@@ -62,9 +50,73 @@
         "named": true
       },
       {
+        "type": "macro",
+        "named": true
+      },
+      {
+        "type": "macro_definition",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_expression",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "_atom",
+        "named": true
+      },
+      {
+        "type": "_callable",
+        "named": true
+      },
+      {
+        "type": "_loop",
+        "named": true
+      },
+      {
+        "type": "_matcher",
+        "named": true
+      },
+      {
+        "type": "application",
+        "named": true
+      },
+      {
+        "type": "definition",
+        "named": true
+      },
+      {
         "type": "let",
         "named": true
       },
+      {
+        "type": "progn",
+        "named": true
+      },
+      {
+        "type": "quasiquote",
+        "named": true
+      },
+      {
+        "type": "quote",
+        "named": true
+      },
+      {
+        "type": "special_form",
+        "named": true
+      },
+      {
+        "type": "var",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_loop",
+    "named": true,
+    "subtypes": [
       {
         "type": "loop",
         "named": true
@@ -88,29 +140,15 @@
       {
         "type": "loopwhile_thread",
         "named": true
-      },
-      {
-        "type": "macro",
-        "named": true
-      },
-      {
-        "type": "macro_definition",
-        "named": true
-      },
+      }
+    ]
+  },
+  {
+    "type": "_matcher",
+    "named": true,
+    "subtypes": [
       {
         "type": "match",
-        "named": true
-      },
-      {
-        "type": "progn",
-        "named": true
-      },
-      {
-        "type": "quasiquote",
-        "named": true
-      },
-      {
-        "type": "quote",
         "named": true
       },
       {
@@ -119,14 +157,6 @@
       },
       {
         "type": "recv_timeout",
-        "named": true
-      },
-      {
-        "type": "special_form",
-        "named": true
-      },
-      {
-        "type": "var",
         "named": true
       }
     ]
@@ -1248,7 +1278,7 @@
           }
         ]
       },
-      "timeout": {
+      "value": {
         "multiple": false,
         "required": true,
         "types": [
@@ -1286,6 +1316,10 @@
       "types": [
         {
           "type": "_expression",
+          "named": true
+        },
+        {
+          "type": "function_definition",
           "named": true
         }
       ]
