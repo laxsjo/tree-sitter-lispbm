@@ -1774,6 +1774,10 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": [],
+  "supertypes": [
+    "_atom",
+    "_expression",
+    "_pattern"
+  ],
   "reserved": {}
 }

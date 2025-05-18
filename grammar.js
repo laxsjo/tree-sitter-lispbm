@@ -11,6 +11,11 @@
 module.exports = grammar({
   name: "lispbm",
   extras: ($) => [/(\s|\f)/, $.comment],
+  supertypes: ($) => [
+    $._atom,
+    $._expression,
+    $._pattern,
+  ],
   rules: {
     program: ($) => repeat(choice($._expression, $.comment, $.directive)),
     _expression: ($) =>
