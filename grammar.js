@@ -59,7 +59,22 @@ module.exports = grammar({
         -1,
         seq(
           "(",
-          choice(field("special", $.special), $.function_definition),
+          field(
+            "keyword",
+            choice(
+              "and",
+              "atomic",
+              "call-cc",
+              "call-cc-unsafe",
+              "cond",
+              "if",
+              "import",
+              "move-to-flash",
+              "or",
+              "setq",
+              "trap",
+            ),
+          ),
           repeat($._expression),
           ")",
         ),
@@ -104,7 +119,7 @@ module.exports = grammar({
         "_",
         "?",
       ),
-  
+
     // Strings
     // The following escape sequences are valid:
     // \0 -> 0   ; NULL
@@ -120,27 +135,39 @@ module.exports = grammar({
     // \" -> 34  ; double quote
     // \\ -> 92  ; backslash character, \
     // \d -> 127 ; delete character, DEL
-    string: ($) => seq('"', repeat(choice($.string_fragment, $.escape_sequence, $.invalid_escape_sequence)), '"'),
+    string: ($) =>
+      seq(
+        '"',
+        repeat(
+          choice(
+            $.string_fragment,
+            $.escape_sequence,
+            $.invalid_escape_sequence,
+          ),
+        ),
+        '"',
+      ),
     string_fragment: ($) => /[^"\\]+/,
-    
+
     // Character literals
-    character: ($) => seq(
-      "\\#",
-      choice(
-        $.character_fragment,
-        $.invalid_character_fragment,
-        $.escape_sequence,
-        $.invalid_escape_sequence,
-      )
-    ),
+    character: ($) =>
+      seq(
+        "\\#",
+        choice(
+          $.character_fragment,
+          $.invalid_character_fragment,
+          $.escape_sequence,
+          $.invalid_escape_sequence,
+        ),
+      ),
     character_fragment: ($) => token.immediate(/\p{ASCII}/u),
     // Non-ascii character
     invalid_character_fragment: ($) => token.immediate(/\P{ASCII}/u),
-    
+
     // spell-checker: disable-next-line
     escape_sequence: ($) => token.immediate(/\\[abtnvfresd0"\\]/),
     invalid_escape_sequence: ($) => token.immediate(/\\(.|\n)/),
-    
+
     byte_array: ($) => seq("[", repeat(choice($.number, $.character)), "]"),
 
     progn: ($) =>
@@ -196,13 +223,14 @@ module.exports = grammar({
     destructure_list: ($) => seq("(", repeat($._destructure_pattern), ")"),
 
     // Functions
-    _callable: ($) => choice(
-      $.function,
-      $.closure,
-      $.function_definition,
-      $.macro,
-      $.macro_definition
-    ),
+    _callable: ($) =>
+      choice(
+        $.function,
+        $.closure,
+        $.function_definition,
+        $.macro,
+        $.macro_definition,
+      ),
     function: ($) =>
       seq(
         "(",
@@ -254,18 +282,14 @@ module.exports = grammar({
     definition: ($) =>
       seq(
         "(",
-        choice("def", "define"),
+        field("keyword", choice("def", "define")),
         field("name", $.symbol),
         field("value", $._expression),
         ")",
       ),
 
     // Match, recv, and recv-to
-    _matcher: ($) => choice(
-      $.match,
-      $.recv,
-      $.recv_timeout,
-    ),
+    _matcher: ($) => choice($.match, $.recv, $.recv_timeout),
     match: ($) =>
       seq(
         "(",
@@ -314,14 +338,15 @@ module.exports = grammar({
     wildcard: ($) => prec(1, "_"),
 
     // Loops
-    _loop: ($) => choice(
-      $.loop,
-      $.loopfor,
-      $.loopwhile,
-      $.looprange,
-      $.loopforeach,
-      $.loopwhile_thread
-    ),
+    _loop: ($) =>
+      choice(
+        $.loop,
+        $.loopfor,
+        $.loopwhile,
+        $.looprange,
+        $.loopforeach,
+        $.loopwhile_thread,
+      ),
     loop: ($) =>
       seq(
         "(",
@@ -381,7 +406,5 @@ module.exports = grammar({
       ),
     loopwhile_thread_args: ($) =>
       seq("(", repeat(choice($.string, $.number)), ")"),
-
-    special: ($) => choice("if", "and", "or", "setq", "import"),
   },
 });

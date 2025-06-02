@@ -370,6 +370,20 @@
     "type": "definition",
     "named": true,
     "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "def",
+            "named": false
+          },
+          {
+            "type": "define",
+            "named": false
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -1291,21 +1305,56 @@
     }
   },
   {
-    "type": "special",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "special_form",
     "named": true,
     "fields": {
-      "special": {
+      "keyword": {
         "multiple": false,
-        "required": false,
+        "required": true,
         "types": [
           {
-            "type": "special",
-            "named": true
+            "type": "and",
+            "named": false
+          },
+          {
+            "type": "atomic",
+            "named": false
+          },
+          {
+            "type": "call-cc",
+            "named": false
+          },
+          {
+            "type": "call-cc-unsafe",
+            "named": false
+          },
+          {
+            "type": "cond",
+            "named": false
+          },
+          {
+            "type": "if",
+            "named": false
+          },
+          {
+            "type": "import",
+            "named": false
+          },
+          {
+            "type": "move-to-flash",
+            "named": false
+          },
+          {
+            "type": "or",
+            "named": false
+          },
+          {
+            "type": "setq",
+            "named": false
+          },
+          {
+            "type": "trap",
+            "named": false
           }
         ]
       }
@@ -1316,10 +1365,6 @@
       "types": [
         {
           "type": "_expression",
-          "named": true
-        },
-        {
-          "type": "function_definition",
           "named": true
         }
       ]
@@ -1481,6 +1526,18 @@
     "named": false
   },
   {
+    "type": "atomic",
+    "named": false
+  },
+  {
+    "type": "call-cc",
+    "named": false
+  },
+  {
+    "type": "call-cc-unsafe",
+    "named": false
+  },
+  {
     "type": "character_fragment",
     "named": true
   },
@@ -1492,6 +1549,10 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "cond",
+    "named": false
   },
   {
     "type": "def",
@@ -1586,6 +1647,10 @@
     "named": false
   },
   {
+    "type": "move-to-flash",
+    "named": false
+  },
+  {
     "type": "nil",
     "named": false
   },
@@ -1619,6 +1684,10 @@
   },
   {
     "type": "t",
+    "named": false
+  },
+  {
+    "type": "trap",
     "named": false
   },
   {
