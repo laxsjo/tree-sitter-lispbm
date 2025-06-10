@@ -992,6 +992,16 @@
     "type": "number",
     "named": true,
     "fields": {
+      "operator": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "-",
+            "named": false
+          }
+        ]
+      },
       "qualifier": {
         "multiple": false,
         "required": false,
@@ -1505,6 +1515,10 @@
   },
   {
     "type": ",@",
+    "named": false
+  },
+  {
+    "type": "-",
     "named": false
   },
   {
